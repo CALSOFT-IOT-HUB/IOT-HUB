@@ -8,8 +8,8 @@ const AppStat = () => {
         <p>Application Statistics</p>
         <div className='Main_body_child2'>
           {
-            [1,2,3,4].map((item, index) => {
-              return <Card key={index}/>
+            [6,12,18].map((item, index) => {
+              return <Card key={index} data={item}/>
             })
 }
            
