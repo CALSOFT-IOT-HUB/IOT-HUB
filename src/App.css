@@ -7,6 +7,54 @@
   justify-content: space-evenly;
   text-align: center;
 }
+.Sidebar{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+.Main_body_item{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content:space-evenly;
+  width: 100%;
+  height: auto  ;
+  line-height: 38px;
+  color: #000000;
+}
+.Main_body_child_p{
+  margin-left: 10px;
+  font-family: 'Roboto';
+font-style: normal;
+text-align: start;
+font-weight: 500;
+font-size: 32px;
+}
+
+.Sidebar-item_1{
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+}
+.Sidebar-item_2{
+  display: flex;
+  align-items: center;
+  color: white;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 70%;
+}
+.Sidebar-item_1 img{
+  border-radius: 50%;
+  width: 60px;
+  border: 2px solid white;
+height: 60px;
+margin: 8px;
+}
 .App-main{
   width: 95%;
   background: #F6FAFF;
