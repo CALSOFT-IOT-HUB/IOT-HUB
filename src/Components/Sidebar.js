@@ -1,6 +1,5 @@
 import React from 'react'
 import '../App.css'
-// import penciledit from"../../public/icons/pencil-edit@2x.png"
 const Sidebar = () => {
   return (
     <div className='Sidebar'>

@@ -12,7 +12,6 @@ const AppStat = () => {
               return <Card key={index} data={item}/>
             })
 }
-           
         </div>
             </div>
     </>

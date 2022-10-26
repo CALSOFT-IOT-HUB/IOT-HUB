@@ -1,39 +1,40 @@
 .App {
   width: 100%;
-  height: 100vh;
+  height: auto;
+  background: #F6FAFF;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content:start;
   text-align: center;
 }
-.Sidebar{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  height: 100vh;
-}
+
 .Main_body_item{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content:space-evenly;
-  width: 100%;
-  height: auto  ;
+  width: 100%;;
   line-height: 38px;
   color: #000000;
 }
 .Main_body_child_p{
-  margin-left: 10px;
-  font-family: 'Roboto';
+margin-left: 10px;
+font-family: 'Roboto';
 font-style: normal;
 text-align: start;
 font-weight: 500;
 font-size: 32px;
 }
-
+.Sidebar{
+  display: flex;
+  height: auto ;
+  align-items: center;
+  flex-direction: column;
+  background-color: #2F76E6;
+}
 .Sidebar-item_1{
-  height: 30%;
+  height: 30vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,7 +47,7 @@ font-size: 32px;
   color: white;
   flex-direction: column;
   justify-content: space-evenly;
-  height: 70%;
+  height: 70vh;
 }
 .Sidebar-item_1 img{
   border-radius: 50%;
@@ -57,45 +58,57 @@ margin: 8px;
 }
 .App-main{
   width: 95%;
-  background: #F6FAFF;
-  height: 100vh;
 }
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+
 .App-sidebar{
   width: 5%;
   height: 100vh;
-  background-color: #2F76E6;
+ 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.scroll-content-left {
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
+  width: 10%;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.scroll-content-right {
+  height:100%;
+  margin-left:180px;
+  width: 90%;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width:720px) {
+  .App{
+    flex-direction: column;
+    justify-content: space-evenly;
   }
-  to {
-    transform: rotate(360deg);
+  .Sidebar{
+    width: 100%;
+    height: 5vh ;
+    flex-direction: row;
+    top: 0;
+   
+  }
+  .Sidebar-item_1, .Sidebar-item_2{
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+  .scroll-content-right
+  {
+    margin-left:0px;
+    width: 100%;
+  }
+  .App-main{
+    width: 100%;
+  }
+  .scroll-content-left{
+width: 100%;
+
   }
 }
