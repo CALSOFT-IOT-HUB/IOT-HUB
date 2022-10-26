@@ -1,6 +1,6 @@
 
 //import useState hook to create menu collapse state
-import React, { useState } from "react";
+import React from "react";
 //import react pro sidebar components
 import {
   ProSidebar,
@@ -26,13 +26,13 @@ import "./Header.css";
 const Header = () => {
   
     //create initial menuCollapse state using useState hook
-    const [menuCollapse, setMenuCollapse] = useState(false)
-
+    // const [menuCollapse, setMenuCollapse] = useState(false)
+let menuCollapse=false;
     //create a custom function that will change menucollapse state from false to true and true to false
-  const menuIconClick = () => {
-    //condition checking to change state from true to false and vice versa
-    menuCollapse ? setMenuCollapse(false) : setMenuCollapse(true);
-  };
+  // const menuIconClick = () => {
+  //   //condition checking to change state from true to false and vice versa
+  //   menuCollapse ? setMenuCollapse(false) : setMenuCollapse(true);
+  // };
 
   return (
     <>
