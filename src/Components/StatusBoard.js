@@ -3,29 +3,23 @@ import './Stat.css';
 import StatusCard from '../Utils/StatusCard';
 const StatusBoard = () => {
   const [data, setdata] = useState([])
-  useEffect(() => {
-    const getData=async ()=>{
-      try {
-          const setHeader = {
-              headers: {
-                  Accept: "application/json"
-              }
-          }
-          const res = await fetch('https://hasibnirban.pythonanywhere.com/sensor/', setHeader);
-          const data = await res.json();
-          console.log(data);
-          setdata(data);
-      }catch (error) {
-              console.log(`The error is ${error}`);}
-          }
-          getData();
-  }, [])
-
-  const fun_cal=()=>{
-    console.log("funcal");
-    setdata(data);
+  const getData=async ()=>{
+    try {
+      const res = await fetch("https://hasibnirban.pythonanywhere.com/sensor/");
+      const data = await res.json();
+      setdata(data);
+    }catch (error) {
+      console.log(`The error is ${error}`);
+    }
   }
-  
+  useEffect(() => {
+    getData();
+  }, [])
+ 
+  const fun_cal=()=>{
+   getData();
+  }
+
   
   return (
     <>

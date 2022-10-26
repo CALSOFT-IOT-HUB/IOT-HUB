@@ -58,3 +58,14 @@ font-size: 13px;
 line-height: 15px;
 color: #000000;
 }
+#togglebtn,#delbtn{
+  background: #2F76E5;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-family: 'Roboto';
+  font-weight: 600;
+  cursor: pointer;
+}

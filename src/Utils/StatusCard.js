@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+
 const StatusCard = ({data,fun}) => {
     console.log(data.active_status);
     const [toggle, settoggle] = useState(false)
@@ -34,8 +35,9 @@ const StatusCard = ({data,fun}) => {
                 })
             }
             const res = await fetch(`https://hasibnirban.pythonanywhere.com/sensor/${id}/toggle_status/`, setHeader);
-            const data = await res.json();
+            if(res.status===200){
             fun();
+            }
             
         }catch (error) {
                 console.log(`The error is ${error}`);}
@@ -49,8 +51,8 @@ const StatusCard = ({data,fun}) => {
       <p>{data.sensor_type}</p>
       <p>{data.sensor_value}</p>
       {data.active_status?<p style={{color:"green"}}>Online </p>:<p style={{color:"red"}}>Offline </p>}
-     { toggle? <button onClick={()=>deleteItem(data.id)}>Delete</button>:""}
-     { toggle? <button onClick={()=>ToggleItem(data.id)}>Toggle Status</button>:""}
+     { toggle? <button onClick={()=>deleteItem(data.id)} id="delbtn">Delete</button>:""}
+     { toggle? <button onClick={()=>ToggleItem(data.id)}  id="togglebtn">Toggle Status</button>:""}
     </div>
   )
 }
