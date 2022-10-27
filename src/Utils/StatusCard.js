@@ -13,8 +13,7 @@ const StatusCard = ({data,fun}) => {
                 }
             }
             const res = await fetch(`https://hasibnirban.pythonanywhere.com/sensor/${id}/`, setHeader);
-            const data = await res.json();
-            console.log(data);
+            console.log(res.status);
             fun();
         }catch (error) {
                 console.log(`The error is ${error}`);}
