@@ -1,6 +1,7 @@
 import React,{useEffect,useState} from 'react'
 import './Stat.css';
 import StatusCard from '../Utils/StatusCard';
+
 const StatusBoard = () => {
   const [data, setdata] = useState([])
   const getData=async ()=>{
@@ -29,7 +30,13 @@ const StatusBoard = () => {
         <div className='status_child2'>
           {
             data.map((item, index) => {
-              return <StatusCard data={item} fun={fun_cal} key={index}/>
+              return(
+                < >
+                
+              <StatusCard data={item} fun={fun_cal} key={index}/>
+              
+              </>
+              );
             })
 }
         </div>

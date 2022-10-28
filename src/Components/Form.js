@@ -1,14 +1,13 @@
 import React,{useState} from 'react'
 import './Form.css';
 import swal from 'sweetalert';
-import {useNavigate,Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 export default function Form(){
-    const navigation=useNavigate();
+
     const[deviceData,setdeviceData]=useState({sensor_id:"",sensor_name:"",sensor_type:"1",
     sensor_value:"",sensor_data:"",sensor_status:false})
     const sendData=(e)=>{
-        console.log(e.target.value);
     setdeviceData({...deviceData,[e.target.name]:e.target.value});
     }
     const SubmitDetails=async(e)=>{
