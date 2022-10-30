@@ -31,11 +31,9 @@ const StatusBoard = () => {
           {
             data.map((item, index) => {
               return(
-                < >
-                
+           
               <StatusCard data={item} fun={fun_cal} key={index}/>
-              
-              </>
+             
               );
             })
 }

@@ -9,7 +9,8 @@ export default function EditPage(){
         sensor_name:"",
         sensor_type:"",
         sensor_value:"",
-        active_status:""
+        active_status:"",
+        sensor_data:""
     });
     
     const getData=async ()=>{
@@ -29,6 +30,7 @@ export default function EditPage(){
         }catch (error) {
                 console.log(`The error is ${error}`);}
         }
+        //eslint-disable-next-line
     const [deviceData,setdeviceData]=useState({});
     useEffect(() => {
         getData();
@@ -38,8 +40,7 @@ export default function EditPage(){
      e.preventDefault();
     setSensorData({...sensorData,[e.target.name]:e.target.value});
     }
-   
-
+ 
     const SubmitDetails=async(e)=>{
         e.preventDefault();
         console.log( JSON.stringify(sensorData));
@@ -73,8 +74,8 @@ export default function EditPage(){
               <h2> EDIT DEVICE INFO HERE</h2>
               <span>Manage Your Device Information</span>
               <form id='form' className='flex flex-col'>
-              <input type="text" placeholder='Sensor_id'  name="sensor_id" onChange={sendData} defaultValue={deviceData.sensor_id}/>
-            <input type="text" placeholder='Sensor_name' name="sensor_name" onChange={sendData} defaultValue={deviceData.sensor_name}/>
+              <input type="text" placeholder='Sensor_id'  name="sensor_id" onChange={sendData} defaultValue={sensorData.sensor_id}/>
+            <input type="text" placeholder='Sensor_name' name="sensor_name" onChange={sendData} defaultValue={sensorData.sensor_name}/>
             <select class="form-control" name="sensor_type" onChange={sendData} value={sensorData.sensor_type} >
             <option value="1">TEMPERATURE_SENSOR</option>
             <option value="2">PRESSURE_SENSOR</option>
@@ -82,8 +83,8 @@ export default function EditPage(){
             <option value="4">FLUID_SENSOR</option>
             <option value="5">PIEZO_SENSOR</option>
     </select>
-                  <input type="text" placeholder='Sensor_value' name="sensor_value" onChange={sendData} defaultValue={deviceData.sensor_value}/>
-                  <input type="text" placeholder='sensor_data' name="sensor_data" onChange={sendData} defaultValue={deviceData.sensor_data} />
+                  <input type="text" placeholder='Sensor_value' name="sensor_value" onChange={sendData} defaultValue={sensorData.sensor_value}/>
+                  <input type="text" placeholder='sensor_data' name="sensor_data" onChange={sendData} defaultValue={sensorData.sensor_data} />
                   <button className="btn" onClick={SubmitDetails} type="submit">Register Device</button>
               </form>
               </div>
